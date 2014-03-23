@@ -1,2 +1,2 @@
-__version__ = '0.1.6'
-from .client import GoDaddyClient, GoDaddyAccount, LoginError
+__version__ = '0.2.0'
+from .client import GoDaddyClient, GoDaddyAccount, GoDaddyError, LoginError

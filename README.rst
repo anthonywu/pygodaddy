@@ -36,6 +36,14 @@ QUICKSTART
         print client.find_domains()
         client.update_dns_record('sub.example.com', '1.2.3.4')
 
+.. code-block:: bash
+
+    godaddy list
+    godaddy find example.com
+    godaddy update sub.example.com 1.2.3.4
+    godaddy delete sub.example.com 
+
+
 DOCS
 ----
 

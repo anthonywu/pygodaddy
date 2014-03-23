@@ -34,7 +34,15 @@ setup(
     packages = ['pygodaddy'],
     package_data={'': ['LICENSE']},
     package_dir = {'pygodaddy':'pygodaddy'},
-    install_requires = ['requests>=1.2.3'],
+    entry_points = {
+        'console_scripts': [
+            'godaddy = pygodaddy.main:main',
+        ]
+    },
+    install_requires = [
+        'docopts==0.6.1',
+        'requests>=1.2.3'
+        ],
     license = open('LICENSE').read(),
     classifiers=(
         'Development Status :: 4 - Beta',
