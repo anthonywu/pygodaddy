@@ -11,12 +11,12 @@ Usage:
 Options:
   -h --help             Show this screen.
   -v --version          Show version.
-  -n --new-record       With 'update' command, creates a new DNS record
-  --record-type=<t>     DNS Record Type [Default: A]
-  --account=<acct>      Optional, account section name in ~/.godaddyrc config [Default: default]
-  --config=<cfg>        Optional, account login config file path [Default: ~/.godaddyrc]
-  --username=<user>     Optional, GoDaddy login username if not using config file
-  --password=<pass>     Optional, GoDaddy login password if not using config file
+  -n --new-record       With 'update' command, creates a new DNS record.
+  --record-type=<t>     DNS Record Type [Default: A].
+  --account=<acct>      Optional, account section name in ~/.godaddyrc config [Default: default].
+  --config=<cfg>        Optional, account login config file path [Default: ~/.godaddyrc].
+  --username=<user>     Optional, GoDaddy login username if not using config file.
+  --password=<pass>     Optional, GoDaddy login password if not using config file.
 """
 
 __doc__ = __doc__.format(
