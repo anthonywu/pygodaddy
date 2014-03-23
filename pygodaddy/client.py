@@ -28,7 +28,10 @@ logger = logging.getLogger(__name__)
 
 DNSRecord = namedtuple('DNSRecord', 'index, hostname, value, ttl, host_td, points_to, rec_modified')
 
-class LoginError(Exception):
+class GoDaddyError(Exception):
+    pass
+
+class LoginError(GoDaddyError):
     pass
 
 class GoDaddyAccount(object):
