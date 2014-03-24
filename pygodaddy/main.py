@@ -20,8 +20,8 @@ Options:
 """
 
 __doc__ = __doc__.format(
-  auth_args='([--account=<acct>] [--config=<cfg>] | [ (--username=<user> --password=<pass>) ])'
-  )
+    auth_args='([--account=<acct>] [--config=<cfg>] | [ (--username=<user> --password=<pass>) ])'
+    )
 
 import ConfigParser
 import docopt
@@ -29,13 +29,17 @@ import os.path
 import pygodaddy
 import sys
 
+
 DEFAULT_CONFIG_PATH = os.path.expanduser('~/.godaddyrc')
+
 
 class LoginConfigError(pygodaddy.GoDaddyError):
     pass
 
+
 class LoginAccountNameError(LoginConfigError):
     pass
+
 
 def _get_client_auth(args):
     """ finds/parses the username and password from either the args or a config file.
@@ -58,6 +62,7 @@ def _get_client_auth(args):
                 config_file_path
                 ))
     return username, password
+
 
 def _map_to_methods_and_args(client, args):
     """ maps CLI args to GoDaddyClient methods and args for separate invocation
@@ -86,6 +91,7 @@ def _map_to_methods_and_args(client, args):
             {'record_type': args['--record-type']}
             )
 
+
 def main():
     try:
         args = docopt.docopt(__doc__, version=pygodaddy.__version__)
@@ -100,9 +106,9 @@ def main():
         method, pargs, kwargs = _map_to_methods_and_args(client, args)
         result = method(*pargs, **kwargs)
         if result is True:
-            sys.exit(0) # POSIX success
+            sys.exit(0)  # POSIX success
         elif result is False:
-            sys.exit(1) # POSIX error
+            sys.exit(1)  # POSIX error
         elif isinstance(result, basestring):
             print(result)
         else:
@@ -112,6 +118,7 @@ def main():
         sys.exit(e.message)
     except docopt.DocoptLanguageError as e:
         sys.exit(e.message)
+
 
 if __name__ == '__main__':
     main()
